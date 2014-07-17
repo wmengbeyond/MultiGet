@@ -1,0 +1,6 @@
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\bin\Release\Imgo.MultiGet.dll
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\bin\Release\Imgo.MultiGet.pdb
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\bin\Release\Imgo.Share.dll
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\obj\x86\Release\ResolveAssemblyReference.cache
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\obj\x86\Release\Imgo.MultiGet.dll
+F:\work_code\C#\NodeFileCopyTool\Imgo.MultiGet\obj\x86\Release\Imgo.MultiGet.pdb

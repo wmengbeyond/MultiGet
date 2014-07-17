@@ -1,0 +1,5 @@
+F:\VC++\ftp_download\Imgo.MultiGet\bin\Debug\Imgo.MultiGet.dll
+F:\VC++\ftp_download\Imgo.MultiGet\bin\Debug\Imgo.MultiGet.pdb
+F:\VC++\ftp_download\Imgo.MultiGet\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\VC++\ftp_download\Imgo.MultiGet\obj\x86\Debug\Imgo.MultiGet.dll
+F:\VC++\ftp_download\Imgo.MultiGet\obj\x86\Debug\Imgo.MultiGet.pdb

@@ -1,0 +1,47 @@
+class Program
+{
+    //支持所有哈希算法
+    static System.Security.Cryptography.HashAlgorithm hashAlgorithm;
+    //文件缓冲区
+    static byte[] buffer;
+    //文件读取流
+    static System.IO.Stream inputStream;    //异步回调方法
+    static void AsyncComputeHashCallback(IAsyncResult result)
+    {
+        int bytesRead = inputStream.EndRead(result);        Console.SetCursorPosition(21, 0);
+        //检查是否到达流末尾
+        if (inputStream.Position < inputStream.Length)
+        {
+            //输出进度
+            Console.Write("{0:P0}", (double)inputStream.Position / inputStream.Length);
+            var output = new byte[buffer.Length];
+            //分块计算哈希值
+            hashAlgorithm.TransformBlock(buffer, 0, buffer.Length, output, 0);
+            //异步读取下一分块
+            inputStream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(AsyncComputeHashCallback), null);
+            return;
+        }
+        else
+        {
+            //计算最后分块哈希值
+            hashAlgorithm.TransformFinalBlock(buffer, 0, bytesRead);
+        }
+        Console.Clear();
+        Console.WriteLine("Hash Algorithm:{0}", hashAlgorithm.ToString());
+        Console.WriteLine("Hash Value:{0}",BitConverter.ToString(hashAlgorithm.Hash).Replace("-", ""));
+        Console.WriteLine("Press any key to exit.");
+        //关闭流
+        inputStream.Close();
+    }    static void Main(string[] args)
+    {
+        string path = @"大文件路径";//几十G也没关系
+        int bufferSize = 1048576;//缓冲区大小，1MB        buffer = new byte[bufferSize];
+        //打开文件流
+        inputStream = File.Open(path, FileMode.Open);
+        hashAlgorithm = System.Security.Cryptography.HMACSHA512.Create();        Console.WriteLine("Now computing hash...{0:P0}", 0);
+        
+        //异步读取数据到缓冲区
+        inputStream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(AsyncComputeHashCallback), null);        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+}

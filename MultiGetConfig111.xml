@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<root> 
+   <Core>
+	<MinSegmentSize>200000</MinSegmentSize><!-- 最小的下载大小 -->
+	<MinSegmentLeftToStartNewSegment>30</MinSegmentLeftToStartNewSegment>
+	<RetryDelay>5</RetryDelay>
+	<MaxRetries>5</MaxRetries>
+	<MaxSegments>5</MaxSegments><!-- 单点最大线程数 -->
+	<DownloadFolder></DownloadFolder><!-- 默认下载存放位置 -->	
+   </Core>
+   <Extension>
+	<Scheduler>
+	   <MaxJobs>2</MaxJobs>
+	   <WorkOnlyOnSpecifiedTimes>False</WorkOnlyOnSpecifiedTimes>
+	   <TimesToWork></TimesToWork>
+	   <MaxRateOnTime>1</MaxRateOnTime>
+	   <AutoStart>True</AutoStart>
+	</Scheduler>
+	<SpeedLimit>
+	   <EnabledLimit>False</EnabledLimit>
+	   <MaxRate>1024</MaxRate>
+	</SpeedLimit>
+	<Protocols>
+	   <ProxyAddress></ProxyAddress>
+	   <ProxyUserName></ProxyUserName>
+	   <ProxyPassword></ProxyPassword>
+	   <ProxyDomain></ProxyDomain>
+	   <UseProxy>False</UseProxy>
+	   <ProxyByPassOnLocal></ProxyByPassOnLocal>
+	   <ProxyPort>80</ProxyPort>
+	</Protocols>
+   </Extension>
+</root> 
